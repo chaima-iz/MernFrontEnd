@@ -10,7 +10,7 @@ function App() {
   const [age, setAge] = useState(0);
 
   const addFriend = () => {
-    Axios.post("http://localhost:3001/addFriend", {
+    Axios.post("https://mernbeg.herokuapp.com//addFriend", {
       name: name,
       age: age,
     }).then(()=>{alert("Friend added : refresh")});
