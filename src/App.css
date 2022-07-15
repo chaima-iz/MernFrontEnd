@@ -1,0 +1,51 @@
+.App {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  gap: 20px;
+  flex-direction: column;
+  flex: 1;
+}
+.inputs > input {
+  width: 200px;
+  height: 50px;
+  padding-left: 5px;
+}
+.inputs > button {
+  border: none;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(252, 34, 70);
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.inputs > button:hover {
+  cursor: pointer;
+}
+.friendTable {
+  flex: 1;
+  background-color: rgb(183, 177, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.friendTable>:only-child{
+  width: 50%;
+}
+
+.MuiTableRow-root.MuiTableRow-head >*
+{
+    font-weight: bold;
+}
