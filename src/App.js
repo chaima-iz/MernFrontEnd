@@ -1,23 +1,28 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, createContext } from "react";
 import Axios from "axios";
 import BasicTable from "./compenents/TheTable";
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import { FriendContext } from "./contextFile";
 
 function App() {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
+  const [friend, setFriend] = useState();
+
 
   const addFriend = () => {
     Axios.post("https://mernbeg.herokuapp.com/addFriend", {
       name: name,
       age: age,
-    }).then(()=>{alert("Friend added : refresh")});
+    }).then(() => {
+      setFriend({ name: name, age: age });
+    });
   };
 
   return (
-    <div className="App">
+    <FriendContext.Provider className="App" value={friend}>
       <div className="inputs">
         <input
           type="text"
@@ -34,14 +39,19 @@ function App() {
           }}
         ></input>
         {/* <button onClick={addFriend}>Add Friend</button> */}
-        <Button size="small" variant="contained" endIcon={<SendIcon />} onClick={addFriend}>
+        <Button
+          size="small"
+          variant="contained"
+          endIcon={<SendIcon />}
+          onClick={addFriend}
+        >
           Add friend
         </Button>
       </div>
       <div className="friendTable">
         <BasicTable />
       </div>
-    </div>
+    </FriendContext.Provider>
   );
 }
 
