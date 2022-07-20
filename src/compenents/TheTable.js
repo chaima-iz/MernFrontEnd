@@ -51,7 +51,7 @@ export default function BasicTable() {
   };
   return (
     <FriendContext.Consumer>
-      {console.log(friend)}
+      {console.log("friend",friend)}
     {friend !== {} ? setListOfFriends([...listOfFriends, {name:"test",age:30}]):setListOfFriends(listOfFriends)}
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
