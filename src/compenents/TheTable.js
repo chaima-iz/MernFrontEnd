@@ -19,7 +19,7 @@ export default function BasicTable() {
     return { name, age, id };
   }
   useEffect(() => {
-    Axios.get("https://mernbeg.herokuapp.com//Friends")
+    Axios.get("https://mernbeg.herokuapp.com/Friends")
       .then((docs) => {
         setListOfFriends(docs.data);
       })
@@ -31,7 +31,7 @@ export default function BasicTable() {
 
   const updateFriend = (id) => {
     const newAge = prompt("New age please ?");
-    Axios.put("https://mernbeg.herokuapp.com//update", { age: newAge, id: id }).then(
+    Axios.put("https://mernbeg.herokuapp.com/update", { age: newAge, id: id }).then(
       () => {
         setListOfFriends(
           listOfFriends.map((val) => {
@@ -44,7 +44,7 @@ export default function BasicTable() {
     );
   };
   const deleteFriend = (id) => {
-    Axios.delete(`https://mernbeg.herokuapp.com//delete/${id}`).then(() => {
+    Axios.delete(`https://mernbeg.herokuapp.com/delete/${id}`).then(() => {
 
       setListOfFriends(
         listOfFriends.filter((val) => {
