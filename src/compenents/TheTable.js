@@ -51,7 +51,7 @@ export default function BasicTable() {
   };
   return (
     <FriendContext.Consumer>
-    {friend !== null ? setListOfFriends([...listOfFriends, {friend}]):setListOfFriends(listOfFriends)}
+    {friend !== {} ? setListOfFriends([...listOfFriends, friend]):setListOfFriends(listOfFriends)}
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>

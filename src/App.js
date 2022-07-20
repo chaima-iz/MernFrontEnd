@@ -9,7 +9,7 @@ import { FriendContext } from "./contextFile";
 function App() {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
-  const [friend, setFriend] = useState();
+  const [friend, setFriend] = useState({});
 
 
   const addFriend = () => {
